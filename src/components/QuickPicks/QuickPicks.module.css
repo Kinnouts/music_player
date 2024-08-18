@@ -1,0 +1,136 @@
+.quickPicks {
+  display: flex;
+  flex-direction: column;
+  height: auto; /* Cambiado de 100% a auto para que no oculte título de abajo */
+  padding: 20px 20px;
+  position: relative;
+}
+
+.quickPicks h2 {
+  font-size: 24px;
+  margin-bottom: 16px;
+}
+
+.songListContainer {
+  flex-grow: 1;
+  margin: 0 -10px;  /* Compensar el padding de las tarjetas */
+}
+
+.songList {
+  /* Eliminamos el display: grid ya que ahora usamos Slick */
+}
+
+.songList :global(.slick-list) {
+  margin: 0 -10px;
+}
+
+.songList :global(.slick-slide) {
+  padding: 0 10px;
+}
+
+.songCardWrapper {
+  padding: 0px;
+  box-sizing: border-box;
+}
+
+.songCard {
+  display: flex;
+  align-items: center;
+  background-color: #181818;
+  border-radius: 4px;
+  overflow: hidden;
+  transition: background-color 0.2s ease-in-out;
+  height: 80px;
+}
+
+.songCard:hover {
+  background-color: #282828;
+}
+
+.songCard img {
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+}
+
+.songInfo {
+  flex-grow: 1;
+  padding: 12px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.songTitle {
+  font-size: 14px;
+  font-weight: bold;
+  margin-bottom: 4px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.songArtist {
+  font-size: 12px;
+  opacity: 0.7;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* Estilos para las flechas de navegación */
+.quickPicks :global(.slick-prev),
+.quickPicks :global(.slick-next) {
+  z-index: 1;
+  font-size: 1.5rem;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: rgba(255, 255, 255, 0.3);
+  border-radius: 80%;
+  width: 70px;
+  height: 70px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: background-color 0.3s ease;
+  position: absolute;
+  top: 50%; /* Centrar verticalmente */
+  transform: translateY(-50%); /* Ajuste fino para el centrado vertical */
+}
+
+.quickPicks :global(.slick-prev:hover),
+.quickPicks :global(.slick-next:hover) {
+  background-color: rgba(255, 255, 255, 0.7);
+  color: black;
+}
+
+.quickPicks :global(.slick-prev) {
+  left: -10px; /* Ajusta esta valor para mover el botón más hacia el centro */
+}
+
+.quickPicks :global(.slick-next) {
+  right: -10px; /* Ajusta este valor para mover el botón más hacia el centro */
+}
+
+.quickPicks :global(.slick-prev:before),
+.quickPicks :global(.slick-next:before) {
+  font-family: 'slick';
+  font-size: 30px;
+  line-height: 1;
+  opacity: 1;
+  color: currentColor;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Ajustes para el carrusel de múltiples filas */
+.quickPicks :global(.slick-slide > div) {
+  margin-bottom: 10px;
+}
+
+.quickPicks :global(.slick-slide > div:last-child) {
+  margin-bottom: 0;
+}
+
+/* Ocultar la barra de desplazamiento */
+.quickPicks :global(.slick-list) {
+  overflow: hidden;
+}

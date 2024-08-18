@@ -1,0 +1,67 @@
+.quickPicks {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.quickPicks h2 {
+  font-size: 24px;
+  margin-bottom: 16px;
+}
+
+.songListContainer {
+  flex-grow: 1;
+  overflow-y: auto;
+}
+
+.songList {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /*Cambio acá minmax para aumentar el tamaño de cada celda de conten*/
+  gap: 16px;
+}
+
+
+.songCard {
+  display: flex;
+  align-items: center;
+  background-color: #181818;
+  border-radius: 4px;
+  overflow: hidden;
+  transition: background-color 0.2s ease-in-out;
+  height: 80px;
+}
+
+.songCard:hover {
+  background-color: #282828;
+}
+
+.songCard img {
+  width: 64px;
+  height: 64px;
+  object-fit: cover;
+}
+
+.songInfo {
+  flex-grow: 1;
+  padding: 12px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.songTitle {
+  font-size: 14px;
+  font-weight: bold;
+  margin-bottom: 4px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.songArtist {
+  font-size: 12px;
+  opacity: 0.7;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}

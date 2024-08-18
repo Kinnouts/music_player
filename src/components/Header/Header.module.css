@@ -1,0 +1,38 @@
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #000;
+    color: white;
+  }
+  
+  .logo {
+    display: flex;
+    align-items: center;
+  }
+  
+  .logo img {
+    height: 100px;
+    margin-right: 10px;
+  }
+  
+  .logo span {
+    font-size: 20px;
+    font-weight: bold;
+  }
+  
+  .searchBar input {
+    padding: 8px 12px;
+    border-radius: 20px;
+    border: none;
+    background-color: #333;
+    color: white;
+    width: 300px;
+  }
+  
+  .userProfile img {
+    width: 100px;  /* Ajustar este valor según el tamaño deseado */
+    height: 100px; /* Debe ser igual al width para un círculo perfecto */
+    border-radius: 50%;
+  }

@@ -1,0 +1,32 @@
+.albumCard {
+    display: flex;
+    flex-direction: column;
+    background-color: #222;
+    border-radius: 8px;
+    overflow: hidden;
+    transition: opacity 0.3s ease;
+  }
+  .albumCard:hover {
+    opacity: 0.5;
+  }
+  .image {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+  }
+  
+  .info {
+    padding: 0.5rem;
+  }
+  
+  .title {
+    margin: 0;
+    font-size: 1rem;
+    color: #fff;
+  }
+  
+  .artist {
+    margin: 0;
+    font-size: 0.8rem;
+    color: #999;
+  }

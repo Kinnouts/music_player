@@ -1,0 +1,38 @@
+.recommendedAlbums {
+    padding: 1rem;
+  }
+  
+  .albumList {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 1rem;
+  }
+  /* Nuevos estilos para el carrusel */
+.albumList :global(.slick-list) {
+  margin: 0 -10px;  /* Ajustar según el espaciado deseado entre las tarjetas */
+}
+
+.albumList :global(.slick-slide) {
+  padding: 0 10px;  /* Ajusta según el espaciado deseado entre las tarjetas */
+}
+.recomendedAlbums :global(.slick-prev),
+.recomendedAlbums :global(.slick-next) {
+  z-index: 1;
+  font-size: 1.5rem; /* Aumenta el tamaño de las flechas */
+  background-color: rgba(0, 0, 0, 0.5); /* Fondo semitransparente para que sean más visibles */
+  color: rgba(255, 255, 255, 0.3); /* Color blanco con 70% de opacidad */
+  border-radius: 80%; /* Forma circular para las flechas */
+  width: 70px; /* Anchura de la flecha */
+  height: 70px; /* Altura de la flecha */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: background-color 0.3s ease; /* Transición suave en el hover */
+}
+
+.recomendedAlbums :global(.slick-prev:hover),
+.recomendedAlbums :global(.slick-next:hover) {
+  background-color: rgba(255, 255, 255, 0.7); /* Cambia el fondo al pasar el mouse para que sea más visible */
+  color: black; /* Cambia el color de la flecha al pasar el mouse */
+}
+
