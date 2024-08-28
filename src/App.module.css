@@ -5,6 +5,11 @@
   background-color: #121212;
   color: white;
 }
+.content {
+  display: flex;
+  flex: 1;
+  overflow: hidden;
+}
 
 .mainContent {
   flex: 1;

@@ -4,7 +4,11 @@ export const listenAgainData: Song[] = [
   { id: 1, title: 'Whataya want from me', artist: 'Adam Lambert', image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQP45SAP0LbyAFsaOjXv3Qz5MxLJXohhOjyqA&s' },
   { id: 2, title: 'Cannibal', artist: 'Silversun Pickups', image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQZlCf25uyULr05IFG8deYJb__k6TAXXU5vfw&s' },
   {id:3, title: 'I can talk',artist:'Two Door Cinema Club', image:'https://cdns-images.dzcdn.net/images/cover/419c51dda52606584b30b95c8f1ce4e6/1900x1900-000000-80-0-0.jpg'},
-  {id:4, title: 'Listen to your heart', artist:'Roxete', image:'https://upload.wikimedia.org/wikipedia/en/thumb/f/f3/ListenToYourHeart.jpg/220px-ListenToYourHeart.jpg'}
+  {id:4, title: 'Listen to your heart', artist:'Roxete', image:'https://upload.wikimedia.org/wikipedia/en/thumb/f/f3/ListenToYourHeart.jpg/220px-ListenToYourHeart.jpg'},
+  {id:5, title:'Still loving you', artist:'Scorpions',image:'https://upload.wikimedia.org/wikipedia/en/8/83/Scorpions-stilllovingyou1.jpg'},
+  {id:6, title:'Dream On', artist:'Aerosmith', image:'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQHfxQDs5Up_2DeB9NL44bVLHiRgNsapqG6nA&s'},
+  {id:7, title:'Sweet child of mine', artist: 'Guns and roses', image:'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ5yTlj6xZX6PteCqLo3Hj4SMnYhqDNwreOXA&s'},
+  {id:8, title:'Zombie', artist:'The Cramberries', image:'https://laguitarradelasmusas.com/wp-content/uploads/2023/03/81qg-fuwdpl._sl1431_.jpg'}
   // ... más canciones
 ];
 
@@ -22,7 +26,12 @@ export const quickPicksData: Song[] = [
   { id: 11, title: 'Somebody told me', artist: 'The Killers', image: 'https://i.scdn.co/image/ab67616d00001e02ccdddd46119a4ff53eaf1f5d' },
   { id: 12, title: 'Undisclossed desires', artist: 'Muse', image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRSejZ2GQkMj0BssqkRbJcrMBJ9N0vzVtL1rw&s' },
   { id: 13, title: 'Mardy Bum', artist: 'Arctic Monkeys', image: 'https://i1.sndcdn.com/artworks-000137732013-2vwoz7-t500x500.jpg' },
-  
+  {id: 14, title:'Creep', artist:'Radiohead', image:'https://i.scdn.co/image/ab67616d0000b273df55e326ed144ab4f5cecf95'},
+  {id:15, title:'Fake plastic trees', artist:'Radiohead', image:'https://i1.sndcdn.com/artworks-jFN83UAqcRSL-0-t500x500.png'},
+  {id:16, title:'Sometimes', artist:'Britney Spears',image:'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRHNDjHbu5igQIP3p82DYbUA_nLtTGCEvOy9A&s'},
+  {id:17, title:'Everybody',artist:'Backstreet boys', image:'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQJfSBzTMIyDRpaxMoDFPLKFCJ31DdVMLlZbQ&s'},
+  {id:18, title:'Welcome to the black parade', artist:'My Chemical Romance', image:'https://upload.wikimedia.org/wikipedia/en/e/ea/Blackparadecover.jpg'}
+
 
 
 
@@ -49,5 +58,7 @@ export const similarArtistsData: Artist[] = [
   {id: 5, name: 'Temple of the dog', image:'https://i0.wp.com/www.scienceofnoise.net/wp-content/uploads/2021/04/temple.png?resize=708%2C718&ssl=1'},
   {id:6, name:'Metallica', image:'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQgSXv3Js6vyyiTh_f0E67vgODu89iEmt8LuA&s'},
   {id:7,name:'HIM', image:'https://www.dafont.com/forum/attach/orig/1/0/101642.jpg'},
-  {id:8, name:'Battle Beast', image:'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcREIVED-xTbUiUFg_JEHFJsK09LBk1oqO4JiA&s'}
+  {id:8, name:'Battle Beast', image:'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcREIVED-xTbUiUFg_JEHFJsK09LBk1oqO4JiA&s'},
+  {id:9, name:'Beast in Black', image:'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTG4hjaj1P66xQ2L2exBMrhzCN-2gMYK0Oncw&s'},
+  {id:10, name:'Iron Maiden', image:'https://s3.abcstatics.com/media/cultura/2021/09/03/iron1-U08443616206FJw-1248x698@abc.jpeg'}
 ];

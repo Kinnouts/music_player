@@ -62,3 +62,15 @@ export const similarArtistsData: Artist[] = [
   {id:9, name:'Beast in Black', image:'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTG4hjaj1P66xQ2L2exBMrhzCN-2gMYK0Oncw&s'},
   {id:10, name:'Iron Maiden', image:'https://s3.abcstatics.com/media/cultura/2021/09/03/iron1-U08443616206FJw-1248x698@abc.jpeg'}
 ];
+interface Sang {
+  name: string;
+  artist: string;
+  album: string;
+  image: string; // URL de la imagen
+}
+export const currentSong: Sang = {
+  name: 'Shadowplay',
+  artist: 'The Killers',
+  album: 'Sawdust',
+  image: 'https://i.scdn.co/image/ab67616d0000b273c535aaba615ccebdf91f9192'
+};
