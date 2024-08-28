@@ -1,48 +1,23 @@
-.listenAgain {
-  padding: 1rem;
+.similarArtists {
+    padding: 1rem;
   }
   
-  .songList {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-  gap: 1rem;
-  }
-  
-  /* Agrupar estilos de SongCard por separado */
-  .songCard {
-  position: relative;
-  width: 100%;
-  padding-top: 100%;
-  clip-path: polygon(
-  50% 0%,
-  100% 25%,
-  100% 75%,
-  50% 100%,
-  0% 75%,
-  0% 25%
-  );
-  overflow: hidden;
-  background: #f0f0f0;
-  }
-  
-  .songCard img {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
+  .artistList {
+    display: flex;
+    overflow-x: auto;
+    gap: 1rem;
+    padding-bottom: 1rem;
   }
   /* Nuevos estilos para el carrusel */
-.songList :global(.slick-list) {
-  margin: 0 -10px;  /* Ajusta según el espaciado deseado entre las tarjetas */
+.artistList :global(.slick-list) {
+  margin: 0 -10px;  /* Ajustar según el espaciado deseado entre las tarjetas */
 }
 
-.songList :global(.slick-slide) {
+.artistList :global(.slick-slide) {
   padding: 0 10px;  /* Ajusta según el espaciado deseado entre las tarjetas */
 }
-.listenAgain :global(.slick-prev),
-.listenAgain :global(.slick-next) {
+.similarArtists :global(.slick-prev),
+.similarArtists :global(.slick-next) {
   z-index: 1;
   font-size: 1.5rem; /* Aumenta el tamaño de las flechas */
   background-color: rgba(0, 0, 0, 0.5); /* Fondo semitransparente para que sean más visibles */
@@ -56,12 +31,9 @@
   transition: background-color 0.3s ease; /* Transición suave en el hover */
 }
 
-.listenAgain :global(.slick-prev:hover),
-.listenAgain :global(.slick-next:hover) {
+.similarArtists :global(.slick-prev:hover),
+.similarArtists :global(.slick-next:hover) {
   background-color: rgba(255, 255, 255, 0.7); /* Cambia el fondo al pasar el mouse para que sea más visible */
   color: black; /* Cambia el color de la flecha al pasar el mouse */
 }
 
-
- 
-  
