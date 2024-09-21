@@ -46,7 +46,7 @@ const App: React.FC = () => {
   return (
     <div className={styles.app}>
       <Header />
-      <div className={styles.content}>
+      <div className={styles.mainContainer}>
         <Sidebar 
           playlists={playlists} 
           onNewPlaylist={togglePlaylistForm}
@@ -56,16 +56,18 @@ const App: React.FC = () => {
             setEditingPlaylist(null);
           }}
         />
-        <main className={styles.mainContent}>
-          {showPlaylistForm ? (
-            <PlaylistForm 
-              onSubmit={editingPlaylist ? updatePlaylist : addPlaylist} 
-              initialData={editingPlaylist}
-            />
-          ) : (
-            <MainContent />
-          )}
-        </main>
+        <div className={styles.mainWrapper}>
+          <main className={styles.mainContent}>
+            {showPlaylistForm ? (
+              <PlaylistForm 
+                onSubmit={editingPlaylist ? updatePlaylist : addPlaylist} 
+                initialData={editingPlaylist}
+              />
+            ) : (
+              <MainContent />
+            )}
+          </main>
+        </div>
       </div>
       <PlaybackBar />
     </div>
@@ -73,3 +75,6 @@ const App: React.FC = () => {
 }
 
 export default App;
+
+
+
