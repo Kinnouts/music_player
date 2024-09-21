@@ -1,101 +1,137 @@
 .playbackBar {
-    display: flex;
-    align-items: center;
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    background-image: url('../../public/terciopelo.jpg');
-    background-size: cover;
-    padding: 0.5rem 1rem;
-    display: flex;
-    flex-direction: row;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #282828;
+  padding: 16px;
+  color: white;
+}
+
+.songInfo {
+  display: flex;
+  align-items: center;
+  width: 30%;
+}
+
+.songImage {
+  width: 56px;
+  height: 56px;
+  margin-right: 14px;
+  object-fit: cover;
+}
+
+.songTitle {
+  font-size: 14px;
+  margin: 0;
+}
+
+.songDescription {
+  font-size: 12px;
+  color: #b3b3b3;
+  margin: 4px 0 0;
+}
+
+.rightSide {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 70%;
+}
+
+.controls {
+  display: flex;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.controlButton {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 16px;
+  margin: 0 8px;
+  cursor: pointer;
+  padding: 8px;
+  border-radius: 50%;
+  transition: background-color 0.2s;
+  position: relative;
+}
+
+.controlButton:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.playPauseButton {
+  font-size: 24px;
+}
+
+.skipText {
+  position: absolute;
+  bottom: -5px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 10px;
+}
+
+.progressContainer {
+  width: 100%;
+}
+
+.progressBarContainer {
+  width: 100%;
+  padding: 4px 0;
+  cursor: pointer;
+}
+
+.progressBar {
+  width: 100%;
+  height: 4px;
+  background-color: #535353;
+  position: relative;
+  border-radius: 2px;
+}
+
+.progress {
+  height: 100%;
+  background-color: #1db954;
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-radius: 2px;
+}
+
+.progressThumb {
+  width: 12px;
+  height: 12px;
+  background-color: white;
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.timeInfo {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  font-size: 12px;
+  color: #b3b3b3;
+  margin-bottom: 8px;
+}
+
+@media (max-width: 768px) {
+  .playbackBar {
+    flex-direction: column;
+    padding: 12px;
   }
-  .container {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-  }
-  
+
   .songInfo {
-    display: flex;
-    align-items: center;
-    margin-bottom: 0.5rem;
-    margin-right: 20px;
-  }
-  
-  .songImage {
-    width: 50px;
-    height: 50px;
-    object-fit: cover;
-    border-radius: 50%;
-    margin-right: 10px;
-  }
-  
-  .songTitle {
-    margin: 0;
-    font-size: 1.2rem;
-    color: #fff;
-  }
-  
-  .songArtist {
-    margin: 0;
-    font-size: 0.8rem;
-    color: #999;
-  }
-  
-  .controls {
-    display: flex;
-    justify-content: center;
-    margin-bottom: 0.5rem;
-    margin-left: 20px;
-  }
-  .largeText {
-    font-size: 1.2rem; /* Ajusta el tamaño de la fuente según tus necesidades */
-  }
-  .controlButton {
-    background: none;
-    border: none;
-    color: #fff;
-    cursor: pointer;
-    margin: 0 0.5rem;
-    font-size: 1.5rem;
-    padding: 0.5rem 1rem;
-    border-radius: 50%; /* Agrega un borde circular */
-  }
-  
-  .controlButton:hover {
-    background-color: #e4cece65;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); /* Agrega una sombra circular transparente */
-  }
-  
-  .controlButton:focus {
-    outline: none;
-  }
-  
-  .progressBar {
     width: 100%;
-    height: 4px;
-    background-color: #333;
-    border-radius: 2px;
-    overflow: hidden;
+    margin-bottom: 16px;
   }
-  
-  .progress {
-    width: 30%;
-    height: 100%;
-    background-color: #1db954;
-  }
+
   .rightSide {
-    flex: 1;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    width: 100%;
   }
-  .controlsContainer {
-    flex: 1;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
-  }
+}
