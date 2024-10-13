@@ -1,20 +1,38 @@
 import React from 'react';
-import { Artist } from '../../types';
+//import { AudioClip } from '../../AudioBoomServices';
 import ArtistCard from '../ArtistCard/ArtistCard';
-import { similarArtistsData } from '../../data';
 import styles from './SimilarArtists.module.css';
 import Slider from 'react-slick';
+import { AudioClip } from '../../types'; // Ajusta la ruta según sea necesario
 
 // Importamos los requeridos de CSS for react-slick
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 
-const SimilarArtists: React.FC = () => {
+interface SimilarArtistsProps {
+  clips: AudioClip[];
+  currentClip: AudioClip | null;
+  isPlaying: boolean;
+  onPlay: (clip: AudioClip) => void;
+  onPause: () => void;
+}
+
+const SimilarArtists: React.FC<SimilarArtistsProps> = ({ 
+  clips, 
+  currentClip, 
+  isPlaying, 
+  onPlay, 
+  onPause 
+}) => {
+  if (clips.length === 0) {
+    return null;
+  }
+
   const settings = {
     dots: true,
     infinite: false,
     speed: 500,
-    slidesToShow: 7, /*Ajustar aquí la cantidad de tarjetas mostradas, tenerlo en cuenta cuando hay separaciones muy grandes */
+    slidesToShow: 7,
     slidesToScroll: 1,
     responsive: [
       {
@@ -40,15 +58,22 @@ const SimilarArtists: React.FC = () => {
       }
     ]
   };
+
   return (
     <section className={styles.similarArtists}>
       <h2>Similar Artists</h2>
       <Slider {...settings}>
-      
-          {similarArtistsData.map((artist: Artist) => (
-            <ArtistCard key={artist.id} {...artist} />
-          ))}
-        
+        {clips.map((clip) => (
+          <ArtistCard
+            key={clip.id}
+            id={clip.id.toString()}
+            name={clip.channel.title}
+            imageUrl={clip.channel.urls.logo_image.original}
+            isPlaying={isPlaying && currentClip?.id === clip.id}
+            onPlay={() => onPlay(clip)}
+            onPause={onPause}
+          />
+        ))}
       </Slider>
     </section>
   );

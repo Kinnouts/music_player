@@ -1,15 +1,22 @@
 import React from 'react';
 import Slider from 'react-slick';
-import { Song } from '../../types';
+//import { AudioClip } from '../../AudioBoomServices';
 import SongCard from '../SongCard/SongCard';
-import { quickPicksData } from '../../data';
 import styles from './QuickPicks.module.css';
+import { AudioClip } from '../../types'; // Ajusta la ruta según sea necesario
 
-// Asegúrate de importar los estilos de react-slick en tu archivo principal
- import 'slick-carousel/slick/slick.css';
- import 'slick-carousel/slick/slick-theme.css';
+import 'slick-carousel/slick/slick.css';
+import 'slick-carousel/slick/slick-theme.css';
 
- const QuickPicks: React.FC = () => {
+interface QuickPicksProps {
+  clips: AudioClip[];
+  currentClip: AudioClip | null;
+  isPlaying: boolean;
+  onPlay: (clip: AudioClip) => void;
+  onPause: () => void;
+}
+
+const QuickPicks: React.FC<QuickPicksProps> = ({ clips, currentClip, isPlaying, onPlay, onPause }) => {
   const settings = {
     dots: false,
     infinite: false,
@@ -43,9 +50,14 @@ import styles from './QuickPicks.module.css';
       <h2>Quick Picks</h2>
       <div className={styles.songListContainer}>
         <Slider {...settings} className={styles.songList}>
-          {quickPicksData.map((song: Song) => (
-            <div key={song.id} className={styles.songCardWrapper}>
-              <SongCard {...song} />
+          {clips.map((clip: AudioClip) => (
+            <div key={clip.id} className={styles.songCardWrapper}>
+              <SongCard 
+                clip={clip}
+                isPlaying={isPlaying && currentClip?.id === clip.id}
+                onPlay={onPlay}
+                onPause={onPause}
+              />
             </div>
           ))}
         </Slider>

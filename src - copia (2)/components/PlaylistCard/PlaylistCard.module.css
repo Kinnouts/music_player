@@ -1,0 +1,45 @@
+.card {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    background-color: #282828;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .card:hover {
+    background-color: #3e3e3e;
+  }
+  
+  .image {
+    width: 60px;
+    height: 60px;
+    object-fit: cover;
+    border-radius: 4px;
+    margin-right: 10px;
+  }
+  
+  .info {
+    flex-grow: 1;
+    overflow: hidden;
+  }
+  
+  .title {
+    font-size: 16px;
+    font-weight: bold;
+    margin: 0 0 5px 0;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    color: #ffffff;
+  }
+  
+  .description {
+    font-size: 14px;
+    margin: 0;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    color: #b3b3b3;
+  }
