@@ -22,7 +22,31 @@
     border-radius: 4px;
     color: white;
   }
+  .formContainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    
+  }
   
+  
+  .formFields {
+    width: 60%;
+    
+  }
+  
+  .previewImageContainer {
+    width: 50%;
+    margin-left: 20px;
+  }
+  
+  .previewImage {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 10px;
+  }
   .submitButton {
     width: 100%;
     padding: 10px;

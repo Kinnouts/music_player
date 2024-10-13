@@ -1,12 +1,10 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import Header from './components/Header/Header';
 import Sidebar from './components/Sidebar/Sidebar';
 import MainContent from './components/MainContent/MainContent';
 import PlaylistForm from './components/PlaylistForm/PlaylistForm';
 import PlaybackBar from './components/PlaybackBar/PlaybackBar';
 import styles from './App.module.css';
-import { AudioClip } from './types';
-import { fetchAudioClips } from './AudioBoomServices'; // Asegúrate de que esta función exista
 
 interface Playlist {
   id: string;
@@ -19,17 +17,6 @@ const App: React.FC = () => {
   const [playlists, setPlaylists] = useState<Playlist[]>([]);
   const [editingPlaylist, setEditingPlaylist] = useState<Playlist | null>(null);
   const [showPlaylistForm, setShowPlaylistForm] = useState(false);
-  const [audioClips, setAudioClips] = useState<AudioClip[]>([]);
-  const [currentClip, setCurrentClip] = useState<AudioClip | null>(null);
-  const [isPlaying, setIsPlaying] = useState(false);
-
-  useEffect(() => {
-    const loadAudioClips = async () => {
-      const clips = await fetchAudioClips();
-      setAudioClips(clips);
-    };
-    loadAudioClips();
-  }, []);
 
   const addPlaylist = (playlist: Omit<Playlist, 'id'>) => {
     const newPlaylist = { ...playlist, id: Date.now().toString() };
@@ -56,34 +43,6 @@ const App: React.FC = () => {
     setEditingPlaylist(null);
   };
 
-  const handlePlay = (clip: AudioClip) => {
-    setCurrentClip(clip);
-    setIsPlaying(true);
-  };
-
-  const handlePause = () => {
-    setIsPlaying(false);
-  };
-
-  const handleClosePlaybackBar = () => {
-    setCurrentClip(null);
-    setIsPlaying(false);
-  };
-
-  const handleNext = () => {
-    const currentIndex = audioClips.findIndex(clip => clip.id === currentClip?.id);
-    if (currentIndex < audioClips.length - 1) {
-      setCurrentClip(audioClips[currentIndex + 1]);
-    }
-  };
-
-  const handlePrevious = () => {
-    const currentIndex = audioClips.findIndex(clip => clip.id === currentClip?.id);
-    if (currentIndex > 0) {
-      setCurrentClip(audioClips[currentIndex - 1]);
-    }
-  };
-
   return (
     <div className={styles.app}>
       <Header />
@@ -105,30 +64,17 @@ const App: React.FC = () => {
                 initialData={editingPlaylist}
               />
             ) : (
-              <MainContent 
-                clips={audioClips}
-                currentClip={currentClip}
-                isPlaying={isPlaying}
-                onPlay={handlePlay}
-                onPause={handlePause}
-              />
+              <MainContent />
             )}
           </main>
         </div>
       </div>
-      {currentClip && (
-        <PlaybackBar 
-          currentClip={currentClip}
-          isPlaying={isPlaying}
-          onPlay={() => setIsPlaying(true)}
-          onPause={handlePause}
-          onClose={handleClosePlaybackBar}
-          onNext={handleNext}
-          onPrevious={handlePrevious}
-        />
-      )}
+      <PlaybackBar />
     </div>
   );
 }
 
 export default App;
+
+
+

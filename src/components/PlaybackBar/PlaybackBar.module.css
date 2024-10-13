@@ -13,7 +13,7 @@
   width: 30%;
 }
 
-.songImage {
+.songInfo img {
   width: 56px;
   height: 56px;
   margin-right: 14px;
@@ -25,23 +25,15 @@
   margin: 0;
 }
 
-.songDescription {
+.songArtist {
   font-size: 12px;
   color: #b3b3b3;
   margin: 4px 0 0;
 }
 
-.rightSide {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: 70%;
-}
-
 .controls {
   display: flex;
   align-items: center;
-  margin-bottom: 12px;
 }
 
 .controlButton {
@@ -54,7 +46,6 @@
   padding: 8px;
   border-radius: 50%;
   transition: background-color 0.2s;
-  position: relative;
 }
 
 .controlButton:hover {
@@ -62,76 +53,47 @@
 }
 
 .playPauseButton {
-  font-size: 24px;
-}
-
-.skipText {
-  position: absolute;
-  bottom: -5px;
-  left: 50%;
-  transform: translateX(-50%);
-  font-size: 10px;
+  font-size: 32px;
 }
 
 .progressContainer {
-  width: 100%;
-}
-
-.progressBarContainer {
-  width: 100%;
-  padding: 4px 0;
-  cursor: pointer;
+  display: flex;
+  align-items: center;
+  width: 40%;
 }
 
 .progressBar {
-  width: 100%;
+  flex-grow: 1;
+  margin: 0 10px;
+  -webkit-appearance: none;
+  background: #535353;
+  outline: none;
   height: 4px;
-  background-color: #535353;
-  position: relative;
   border-radius: 2px;
 }
 
-.progress {
-  height: 100%;
-  background-color: #1db954;
-  position: absolute;
-  top: 0;
-  left: 0;
-  border-radius: 2px;
-}
-
-.progressThumb {
+.progressBar::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
   width: 12px;
   height: 12px;
-  background-color: white;
+  background: white;
+  cursor: pointer;
   border-radius: 50%;
-  position: absolute;
-  top: 50%;
-  transform: translate(-50%, -50%);
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
 }
 
-.timeInfo {
-  display: flex;
-  justify-content: space-between;
-  width: 100%;
-  font-size: 12px;
-  color: #b3b3b3;
-  margin-bottom: 8px;
+.progressBar::-moz-range-thumb {
+  width: 12px;
+  height: 12px;
+  background: white;
+  cursor: pointer;
+  border-radius: 50%;
 }
 
-@media (max-width: 768px) {
-  .playbackBar {
-    flex-direction: column;
-    padding: 12px;
-  }
-
-  .songInfo {
-    width: 100%;
-    margin-bottom: 16px;
-  }
-
-  .rightSide {
-    width: 100%;
-  }
+.closeButton {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
 }

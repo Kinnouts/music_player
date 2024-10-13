@@ -1,6 +1,7 @@
 .sidebar {
     width: 16rem;
-    background-color: #1f2937;
+    background-image: url('../../public/vidrios_rotos.jpeg');
+    background-size: cover; /* opcional, pero recomendado para que la imagen se ajuste al tamaño del elemento */
     height: 100vh;
     padding: 1rem;
     color: white;

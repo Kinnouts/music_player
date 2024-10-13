@@ -1,8 +1,7 @@
 .quickPicks {
   display: flex;
   flex-direction: column;
-  height: auto; /* Cambiado de 100% a auto para que no oculte título de abajo */
-  padding: 20px 20px;
+  padding: 20px;
   position: relative;
 }
 
@@ -12,24 +11,25 @@
 }
 
 .songListContainer {
-  flex-grow: 1;
-  margin: 0 -10px;  /* Compensar el padding de las tarjetas */
+  width: 100%;
+  overflow: hidden;
 }
 
 .songList {
-  /* Eliminamos el display: grid ya que ahora usamos Slick */
+  margin: 0 -10px;
 }
 
 .songList :global(.slick-list) {
-  margin: 0 -10px;
+  overflow: visible;
 }
 
 .songList :global(.slick-slide) {
   padding: 0 10px;
+  box-sizing: border-box;
 }
 
 .songCardWrapper {
-  padding: 0px;
+  padding: 0;
   box-sizing: border-box;
 }
 
@@ -41,6 +41,7 @@
   overflow: hidden;
   transition: background-color 0.2s ease-in-out;
   height: 80px;
+  width: 100%;
 }
 
 .songCard:hover {
@@ -85,16 +86,16 @@
   font-size: 1.5rem;
   background-color: rgba(0, 0, 0, 0.5);
   color: rgba(255, 255, 255, 0.3);
-  border-radius: 80%;
-  width: 70px;
-  height: 70px;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
   display: flex;
   justify-content: center;
   align-items: center;
   transition: background-color 0.3s ease;
   position: absolute;
-  top: 50%; /* Centrar verticalmente */
-  transform: translateY(-50%); /* Ajuste fino para el centrado vertical */
+  top: 50%;
+  transform: translateY(-50%);
 }
 
 .quickPicks :global(.slick-prev:hover),
@@ -104,17 +105,17 @@
 }
 
 .quickPicks :global(.slick-prev) {
-  left: -10px; /* Ajusta esta valor para mover el botón más hacia el centro */
+  left: -20px;
 }
 
 .quickPicks :global(.slick-next) {
-  right: -10px; /* Ajusta este valor para mover el botón más hacia el centro */
+  right: -20px;
 }
 
 .quickPicks :global(.slick-prev:before),
 .quickPicks :global(.slick-next:before) {
   font-family: 'slick';
-  font-size: 30px;
+  font-size: 20px;
   line-height: 1;
   opacity: 1;
   color: currentColor;
@@ -128,6 +129,11 @@
 
 .quickPicks :global(.slick-slide > div:last-child) {
   margin-bottom: 0;
+}
+
+/* Asegurar que todas las tarjetas tengan el mismo ancho */
+.quickPicks :global(.slick-slide > div) {
+  width: 100% !important;
 }
 
 /* Ocultar la barra de desplazamiento */
